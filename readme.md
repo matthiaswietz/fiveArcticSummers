@@ -4,7 +4,8 @@ Bioinformatic code for bacterial community analyses in "Five summers across Fram
 
 ### Overview of content
 
-Rmarkdowns describing primer clipping and DADA2 pipeline; done for each MiSeq run [J3FNT.Rmd](J3FNT.Rmd), [JBKFT.Rmd](JBKFT.Rmd) and [JBL8W.Rmd](JBL8W.Rmd)
+Directory "dada":
+Rmarkdowns describing primer clipping and DADA2 pipeline
 
 Resulting [ASV table](seqtab.txt), [taxonomy table](tax.txt), and [ASV sequences](ASV_seqs.fasta)
 
@@ -12,4 +13,5 @@ Resulting [ASV table](seqtab.txt), [taxonomy table](tax.txt), and [ASV sequences
 
 [Physicochemical data and sample info](metadata.txt), needed for community analyses
 
+Directory "analysis-plotting"
 Scripts for analyses/figures, to be run in this order: [load/format data](DataLoad.R), [calculate alpha-diversity](RarefacDiversity.R), [community analyses](Res_Communities.R), [environmental correlations](Res_Correlations.R)
