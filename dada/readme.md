@@ -4,4 +4,4 @@ Rmarkdowns describing primer clipping and DADA2 pipeline; done for each MiSeq ru
 [JBL8W.Rmd](JBL8W.Rmd)
 
 Individual seq-tables are combined, chimera-checked and taxonomy-assigned using   
-[MergeChimTax.Rmd](MergeChimTax.Rmd).
+[MergeChimTax.Rmd](MergeChimTax.Rmd)
