@@ -4,11 +4,11 @@ Bioinformatic code for bacterial community analyses in "Five summers across Fram
 
 ### Overview of content
 
-Directory "dada":  
+Directory ["dada"](./dada)  
 Amplicon generation and resulting files
 
-Directory "metadata":  
+Directory ["metadata"](./metadata)  
 Metadata and environmental measurements 
 
-Directory "analysis-plotting":  
+Directory ["analysis-plotting"](./analysis-plotting)  
 Scripts for analyses/figures
