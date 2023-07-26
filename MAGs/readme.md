@@ -1,1 +1,1 @@
-Directory containing annotation files for MAGs, used for Script [Res8_MAGs.R](../analysis-plotting/Res8_MAGs.R)
+Directory containing annotation files for MAGs, used for [functional predictions of ASVs](../analysis-plotting/Res7_MAGs.R)
