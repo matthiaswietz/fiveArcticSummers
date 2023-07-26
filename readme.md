@@ -4,11 +4,11 @@ Bioinformatic code for bacterial community analyses in "Five summers across Fram
 
 ### Overview of content
 
-Directory "dada":
-Rmarkdowns describing primer clipping and DADA2 pipeline; including the resulting [ASV table](seqtab.txt), [taxonomy table](tax.txt), and [ASV sequences](ASV_seqs.fasta)
+Directory "dada":  
+Amplicon generation and resulting files
 
-Directory "metadata"
-Metdata ans environmenteam measurements 
+Directory "metadata":  
+Metadata and environmental measurements 
 
-Directory "analysis-plotting"
+Directory "analysis-plotting":  
 Scripts for analyses/figures
