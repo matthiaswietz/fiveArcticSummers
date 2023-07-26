@@ -1,0 +1,86 @@
+asv	tax	MAG_org	MAG
+asv833	asv833_BD2-11 uc	FRAM_EGC1617_bin2-20	FRAM_EGC1617_bin2
+asv540	asv540_OM75	FRAM_EGC1617_bin3-30	FRAM_EGC1617_bin3
+asv579	asv579_Arctic97B-4 uc	FRAM_EGC1617_bin25-31	FRAM_EGC1617_bin25
+asv355	asv355_SAR86 uc	FRAM_EGC1617_bin0-1	FRAM_EGC1617_bin0
+asv372	asv372_OM182 uc	FRAM_EGC1617_bin34-17	FRAM_EGC1617_bin34
+asv385	asv385_Gammaproteobacteria uc	FRAM_EGC1617_bin6-2	FRAM_EGC1617_bin6
+asv1512	asv1512_Glaciecola	FRAM_EGC1617_bin41-1	FRAM_EGC1617_bin41
+asv3	asv3_SUP05_cluster	FRAM_EGC1617_bin15-13	FRAM_EGC1617_bin15
+asv5	asv5_Polaribacter	FRAM_EGC1617_bin37-5	FRAM_EGC1617_bin37
+asv9	asv9_Aurantivirga	FRAM_EGC1617_bin28-4	FRAM_EGC1617_bin28
+asv12	asv12_SAR92	FRAM_EGC1617_bin23-10	FRAM_EGC1617_bin23
+asv13	asv13_Ulvibacter	FRAM_EGC1617_bin24-8	FRAM_EGC1617_bin24
+asv20	asv20_Lentimonas	FRAM_EGC1617_bin31-3	FRAM_EGC1617_bin31
+asv21	asv21_Luteolibacter	FRAM_EGC1617_bin42-13	FRAM_EGC1617_bin42
+asv36	asv36_Planktomarina	FRAM_EGC1617_bin19-2	FRAM_EGC1617_bin19
+asv54	asv54_Thiotrichaceae uc	FRAM_EGC1617_bin16-1	FRAM_EGC1617_bin16
+asv63	asv63_Nitrincolaceae uc	FRAM_EGC1617_bin32-2	FRAM_EGC1617_bin32
+asv71	asv71_Luteolibacter	FRAM_EGC1617_bin36-2	FRAM_EGC1617_bin36
+asv79	asv79_Arctic97B-4 uc	FRAM_EGC1617_bin38-29	FRAM_EGC1617_bin38
+asv86	asv86_Nitrincolaceae uc	FRAM_EGC1617_bin32-3	FRAM_EGC1617_bin32
+asv142	asv142_Arenicellaceae uc	FRAM_EGC1617_bin10-19	FRAM_EGC1617_bin10
+asv151	asv151_SAR86 uc	FRAM_EGC1617_bin39-5	FRAM_EGC1617_bin39
+asv159	asv159_OM182 uc	FRAM_EGC1617_bin11-2	FRAM_EGC1617_bin11
+asv223	asv223_Nitrospina	FRAM_EGC1617_bin7-8	FRAM_EGC1617_bin7
+asv525	asv525_Salinirepens	FRAM18_bin200-2	FRAM18_bin200
+asv564	asv564_Cryomorphaceae uc	FRAM18_bin125-1	FRAM18_bin125
+asv680	asv680_SAR116 uc	FRAM18_bin089-5	FRAM18_bin089
+asv244	asv244_NS9 uc	FRAM18_bin198-52	FRAM18_bin198
+asv258	asv258_Magnetospiraceae uc	FRAM18_bin083-10	FRAM18_bin083
+asv259	asv259_Cryomorphaceae uc	FRAM18_bin174-22	FRAM18_bin174
+asv267	asv267_Woeseia	FRAM18_bin319-4	FRAM18_bin319
+asv301	asv301_NS5	FRAM18_bin214-5	FRAM18_bin214
+asv320	asv320_NS5	FRAM18_bin185-16	FRAM18_bin185
+asv356	asv356_NS5	FRAM18_bin222-2	FRAM18_bin222
+asv369	asv369_Cand_Aquiluna	FRAM18_bin001-9	FRAM18_bin001
+asv396	asv396_Porticoccus	FRAM18_bin294-33	FRAM18_bin294
+asv5	asv5_Polaribacter	FRAM18_bin168-1	FRAM18_bin168
+asv8	asv8_SAR86 uc	FRAM18_bin297-1	FRAM18_bin297
+asv10	asv10_Amylibacter	FRAM18_bin019-3	FRAM18_bin019
+asv11	asv11_NS5	FRAM18_bin161-4	FRAM18_bin161
+asv13	asv13_Ulvibacter	FRAM18_bin137-2	FRAM18_bin137
+asv16	asv16_Planktomarina	FRAM18_bin057-17	FRAM18_bin057
+asv18	asv18_OCS116 uc	FRAM18_bin068-1	FRAM18_bin068
+asv19	asv19_NS9 uc	FRAM18_bin188-8	FRAM18_bin188
+asv20	asv20_Lentimonas	FRAM18_bin326-14	FRAM18_bin326
+asv24	asv24_Cryomorphaceae uc	FRAM18_bin114-3	FRAM18_bin114
+asv28	asv28_Cryomorphaceae uc	FRAM18_bin132-1	FRAM18_bin132
+asv30	asv30_NS5	FRAM18_bin151-1	FRAM18_bin151
+asv31	asv31_Ascidiaceihabitans	FRAM18_bin046-15	FRAM18_bin046
+asv34	asv34_Methylophagaceae uc	FRAM18_bin228-1	FRAM18_bin228
+asv40	asv40_Flavobacteriaceae uc	FRAM18_bin208-8	FRAM18_bin208
+asv41	asv41_Flavobacteriaceae uc	FRAM18_bin207-9	FRAM18_bin207
+asv44	asv44_OM60(NOR5)	FRAM18_bin290-10	FRAM18_bin290
+asv48	asv48_Marinoscillum	FRAM18_bin121-1	FRAM18_bin121
+asv51	asv51_Sulfitobacter	FRAM18_bin033-3	FRAM18_bin033
+asv53	asv53_NS9 uc	FRAM18_bin220-6	FRAM18_bin220
+asv55	asv55_SAR86 uc	FRAM18_bin313-1	FRAM18_bin313
+asv64	asv64_Lentimonas	FRAM18_bin340-4	FRAM18_bin340
+asv65	asv65_NS2b	FRAM18_bin211-26	FRAM18_bin211
+asv67	asv67_NS4	FRAM18_bin219-1	FRAM18_bin219
+asv69	asv69_Flavobacteriaceae uc	FRAM18_bin205-3	FRAM18_bin205
+asv73	asv73_Planktomarina	FRAM18_bin057-15	FRAM18_bin057
+asv81	asv81_NS4	FRAM18_bin141-3	FRAM18_bin141
+asv83	asv83_Woeseia	FRAM18_bin273-6	FRAM18_bin273
+asv91	asv91_NS9 uc	FRAM18_bin218-11	FRAM18_bin218
+asv95	asv95_Planktomarina	FRAM18_bin063-18	FRAM18_bin063
+asv99	asv99_Marinimicrobia_SAR406 uc	FRAM18_bin345-20	FRAM18_bin345
+asv105	asv105_Flavobacteriaceae uc	FRAM18_bin221-3	FRAM18_bin221
+asv109	asv109_OM182 uc	FRAM18_bin281-27	FRAM18_bin281
+asv112	asv112_Roseibacillus	FRAM18_bin341-2	FRAM18_bin341
+asv113	asv113_SAR86 uc	FRAM18_bin311-1	FRAM18_bin311
+asv126	asv126_SAR92	FRAM18_bin237-4	FRAM18_bin237
+asv151	asv151_SAR86 uc	FRAM18_bin302-30	FRAM18_bin302
+asv153	asv153_Roseibacillus	FRAM18_bin339-1	FRAM18_bin339
+asv164	asv164_Marine_Group_II uc	FRAM18_bin108-4	FRAM18_bin108
+asv166	asv166_Pseudohongiella	FRAM18_bin283-5	FRAM18_bin283
+asv187	asv187_KI89A uc	FRAM18_bin320-86	FRAM18_bin320
+asv191	asv191_NS5	FRAM18_bin181-4	FRAM18_bin181
+asv197	asv197_NS9 uc	FRAM18_bin117-1	FRAM18_bin117
+asv207	asv207_PeM15 uc	FRAM18_bin009-147	FRAM18_bin009
+asv209	asv209_OM43	FRAM18_bin317-1	FRAM18_bin317
+asv218	asv218_Cand_Puniceispirillum	FRAM18_bin087-7	FRAM18_bin087
+asv221	asv221_NS9 uc	FRAM18_bin189-5	FRAM18_bin189
+asv226	asv226_Yoonia-Loktanella	FRAM18_bin033-14	FRAM18_bin033
+asv232	asv232_Marine_Group_II uc	FRAM18_bin104-8	FRAM18_bin104
