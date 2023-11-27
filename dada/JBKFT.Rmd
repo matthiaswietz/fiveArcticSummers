@@ -1,0 +1,251 @@
+---
+title: "JBKFT_CTD_timeseries"
+author: "Matomo Niwano"
+date: "3/23/2021"
+output: html_document
+---
+
+## AMPLICON ANALYSIS (MiSeq Run: JBKFT)
+
+```{bash}
+
+## PRIMER CLIPPING ##
+
+# run cutadapt using custom script
+# done on Ollie AWI server
+# adjust for your own system
+
+module load bio/cutadapt/3.2
+
+bash ./../../../software/cutadapt.sh ./Original GTGYCAGCMGCCGCGGTAA CCGYCAATTYMTTTRAGTTT
+
+## Create a text file containing all the sample names.
+ls -1 *R1_001.fastq.gz | sed 's/_R1_001\.fastq\.gz//' > ../sample_names.txt
+
+```
+
+## DADA2 processing
+
+## Version of programs and R packages used in this analysis
+
+- **R** = 4.0
+- **R Studio** = 1.3.1093
+- **dada2** = 1.14.1
+
+```{r}
+# Load packages
+
+library(dada2)
+library(ShortRead)
+library(ggplot2)
+library(gridExtra)
+```
+
+## Setting up the working directory
+
+```{r}
+# set working directory
+setwd("/isibhv/projects/FRAMdata/MolObs/WaterCol_CTD_1519/JBKFT")
+
+```
+
+## Specify a path to the data
+```{r}
+# refinedData = primer-clipped fastq files
+path <- "/isibhv/projects/FRAMdata/MolObs/WaterCol_CTD_1519/JBKFT/refinedData"
+fns <- list.files(path)
+fns
+```
+
+## Specifying file names for both forward and reverse files. 
+```{r}
+# ensure fwd/rev reads in same order
+fnFs <- sort(list.files(path, pattern="R1_001.fastq.gz"))
+fnRs <- sort(list.files(path, pattern="R2_001.fastq.gz"))
+
+# Define sample names
+sample.names <- sort(read.table("/isibhv/projects/FRAMdata/MolObs/WaterCol_CTD_1519/JBKFT/sample_names.txt", h = F, stringsAsFactors = F)$V1)
+
+# Specify the full path to the fnFs and fnRs
+fnFs <- file.path(path, fnFs)
+fnRs <- file.path(path, fnRs)
+```
+
+## Quality check
+```{r}
+# Creating a pdf file that contains quality information for forward reads. 
+
+QualityProfileFs <- list()
+for(i in 1:length(fnFs)){QualityProfileFs[[i]] <- list()
+  QualityProfileFs[[i]][[1]] <- plotQualityProfile(fnFs[i])}
+pdf("JBKFT_QualityProfileForward.pdf")
+for(i in 1:length(fnFs)) {
+    do.call("grid.arrange", QualityProfileFs[[i]])}
+dev.off()
+rm(QualityProfileFs)
+
+# Creating a pdf file that contains quality information for reverse reads
+QualityProfileRs <- list()
+for(i in 1:length(fnRs)) {
+  QualityProfileRs[[i]] <- list()
+  QualityProfileRs[[i]][[1]] <- plotQualityProfile(fnRs[i])}
+pdf("JBKFT_QualityProfileReverse.pdf")
+for(i in 1:length(fnRs)) {do.call("grid.arrange", 
+                                  QualityProfileRs[[i]])}
+dev.off()
+rm(QualityProfileRs)
+
+# Make directory and filenames for the filtered fastqs
+
+filt_path <- file.path(path, "../Filtered")
+if(!file_test("-d", filt_path)) dir.create(filt_path)
+filtFs <- file.path(
+  filt_path, paste0(sample.names, "_F_filt.fastq"))
+filtRs <- file.path(
+  filt_path, paste0(sample.names, "_R_filt.fastq"))
+
+```
+
+## Filtering and trimming
+```{r}
+# Filter: depending on expected overlap
+#calculate expected error rates: #sum(10^(-x/10)) #x QC of each read
+#truncLen lowered based on QualityProfile (low quality esp of rev-reads)
+
+out <- filterAndTrim(
+  fnFs,
+  filtFs,
+  fnRs,
+  filtRs,
+  truncLen = c(250, 195),
+  maxN = 0,
+  minQ = 2,
+  maxEE = c(3, 3),
+  truncQ = 0,
+  rm.phix = TRUE,
+  compress = F,
+  multithread = 6)
+head(out)
+summary(out[, 2]/out[, 1])
+
+```
+
+Min = 0.2012
+1st Qu. = 0.8019
+Median = 0.8133
+Mean = 0.8038
+3rd Qu. = 0.8248
+Max = 0.8554
+
+>80% (0.8) This is good!
+
+
+## Quality check after the filtering and trimming
+
+```{r}
+# Forward files
+QualityProfileFs.filt <- list()
+for(i in 1:length(filtFs)){
+  QualityProfileFs.filt[[i]] <- list()
+  QualityProfileFs.filt[[i]][[1]] <- plotQualityProfile(
+    filtFs[i])
+  }
+pdf("JBKFT_QualityProfileForwardFiltered.pdf")
+for(i in 1:length(filtFs)) {
+  do.call("grid.arrange", QualityProfileFs.filt[[i]])
+}
+dev.off()
+rm(QualityProfileFs.filt)
+
+# Reverse Files
+
+QualityProfileRs.filt <- list()
+for(i in 1:length(filtRs)) {
+  QualityProfileRs.filt[[i]] <- list()
+  QualityProfileRs.filt[[i]][[1]] <- plotQualityProfile(
+    filtRs[i])
+  }
+pdf("JBKFT_QualityProfileReverseFiltered.pdf")
+for(i in 1:length(filtRs)) {
+  do.call("grid.arrange", 
+    QualityProfileRs.filt[[i]])
+  }
+dev.off()
+rm(QualityProfileRs.filt)
+
+```
+## Learn errors
+/
+```{r}
+errF <- learnErrors(
+  filtFs, multithread = 6, 
+  randomize = T, verbose = 1, MAX_CONSIST = 20)
+errR <- learnErrors(
+  filtRs, multithread = 6, 
+  randomize = T, verbose = 1, MAX_CONSIST = 20)
+
+# Plot error profiles
+pdf("JBKFT_ErrorProfiles.pdf")
+plotErrors(errF, nominalQ = T)
+plotErrors(errR, nominalQ = T)
+dev.off()
+# convergence should be after 5-8 rounds
+# there shouldn't be many outliers outside the black line 
+
+# Dereplication 
+derepFs <- derepFastq(filtFs, verbose = T)
+derepRs <- derepFastq(filtRs, verbose = T)
+
+# Name the derep-class objects by the sample names
+names(derepFs) <- sample.names
+names(derepRs) <- sample.names
+
+```
+
+# Denoising
+```{r}   
+dadaFs <- dada(
+  derepFs, err=errF, multithread=6, pool="pseudo")
+dadaRs <- dada(
+  derepRs, err=errR, multithread=6, pool="pseudo")
+
+```   
+
+## Read Merging
+
+```{r}
+
+# DADA recommends 20 for minOverlap parameter
+mergers <- mergePairs(
+  dadaFs,
+  derepFs,
+  dadaRs,
+  derepRs,
+  minOverlap = 20,
+  verbose = TRUE,
+  propagateCol = c(
+    "birth_fold", "birth_ham"))
+
+# create a sequence table
+seqtab <- makeSequenceTable(mergers)
+dim(seqtab) # 91 samples -- 12761 sequences
+
+saveRDS(seqtab, "JBKFT.rds")
+
+# save image
+save.image("WaterCol_CTD_JBKFT.Rdata")
+
+```
+## Track reads through the pipeline
+
+```{r}
+getN <- function(x) sum(getUniques(x))
+track <- cbind(out, sapply(dadaFs, getN), sapply(mergers, getN), rowSums(seqtab))
+colnames(track) <- c(
+"input","filtered","denoised","merged","tabled")
+rownames(track) <- sample.names
+track <- data.frame(track)
+
+# Export the result to a text file
+write.table(track, "dadastats_JBKFT.txt", quote=F, sep="\t")
+```
