@@ -177,7 +177,7 @@ core.all <- TAX %>%
     "western Fram Strait","eastern Fram Strait"))) 
 
 # Plot -- export size 8x9
-ggplot(core.major) +
+ggplot(core.all) +
   geom_point(aes(
     x=type, y=asv, group=asv,
     size=Abundance, color=tax)) +
